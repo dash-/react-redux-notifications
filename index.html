@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>react-redux-notifications - Redux state driven notification components for React</title>
+    <title>react-redux-notifications-immutable - Immutable.js-compatible version of Jake Ginnivan's react-redux-notifications: Redux state driven notification components for React</title>
 
     
 
     
 
     
-    <link href="style.0bc5f6af7ce7c8246ec4.css" rel="stylesheet">
+    <link href="style.04cf3d261b35930b92ef.css" rel="stylesheet">
     
 
     
@@ -18,11 +18,11 @@
     <div class="pure-g">
       <header class="pure-u-1">
         
-        <h1>react-redux-notifications</h1>
+        <h1>react-redux-notifications-immutable</h1>
         
 
         
-        <div class="description">Redux state driven notification components for React</div>
+        <div class="description">Immutable.js-compatible version of Jake Ginnivan's react-redux-notifications: Redux state driven notification components for React</div>
         
       </header>
 
@@ -34,7 +34,12 @@
 
         <h2>Documentation</h2>
         <section class="documentation">
-          <div><div><h1><span>react-redux-notifications</span></h1><p><span>Say you have a form with an API call and when the form submit succeeds you want to show the user a success message, or
+          <div><div><h1><span>Warning!!</span></h1><p><span>Do not use this package! This is a fork of Jake Ginnivan&#x27;s
+react-redux-notifications package, with a
+</span><a href="https://github.com/JakeGinnivan/react-redux-notifications/issues/3"><span>bug fix for Immutable.js</span></a><span>.
+A pull request has been submitted, and this npm package/version will be removed
+as soon as that pull request is merged and published on npm. This is a temporary
+solution only! It may be removed within hours or days of being published.</span></p><h1><span>react-redux-notifications</span></h1><p><span>Say you have a form with an API call and when the form submit succeeds you want to show the user a success message, or
 in the event of a failure, show them a failure message.</span></p><p><span>React-redux-notifications is a redux middleware powered notification system which makes this super easy in a decoupled way.</span></p><h2><span>Setup</span></h2><pre><pre class="lowlight"><code class="hljs js"><span class="hljs-comment">// Reducer setup</span>
 <span class="hljs-keyword">import</span> { reducer <span class="hljs-keyword">as</span> notifications } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-redux-notifications&#x27;</span>
 
@@ -50,7 +55,7 @@ in the event of a failure, show them a failure message.</span></p><p><span>React
   myAppReducers,
   compose(
     applyMiddleware(ReduxThunk, NotificationMiddleware),
-    <span class="hljs-built_in">window</span>.devToolsExtension ? <span class="hljs-built_in">window</span>.devToolsExtension() : _ =&gt; _
+    <span class="hljs-built_in">window</span>.devToolsExtension ? <span class="hljs-built_in">window</span>.devToolsExtension() : <span class="hljs-function"><span class="hljs-params">_</span> =&gt;</span> _
   )
 )
 </code></pre></pre><h2><span>Example usage</span></h2><pre><pre class="lowlight"><code class="hljs js">&lt;InlineNotification
@@ -63,7 +68,7 @@ in the event of a failure, show them a failure message.</span></p><p><span>React
   triggeredBy={DIFFERENT_API_CALL_SUCCESS}
   hideAfter={500} /&gt;
 </code></pre></pre><h2><span>Limitations</span></h2><p><span>You can only have one InlineNotification component rendered for a particular event.</span></p><p><span>Currently the last rendered components settings will win.</span></p><h2><span>API</span></h2><h3><span>InlineNotification component</span></h3><ul><li><code>triggeredBy</code><span> - either string or array of strings defining which redux event(s) to listen for</span></li><li><code>defaultMessage</code><span> - The fallback message to render. </span><code>notificationMessage</code><span> on the triggering event type will take precident</span></li><li><code>hideAfter</code><span> - Hide notification after specified number of ms</span></li><li><code>renderNotification</code><span> - Override rendering each notification </span><code>function(notification) { return &amp;lt;div key={notification.key}&amp;gt;{notification.message}&amp;lt;/div&amp;gt; }</code></li><li><p><code>renderContainer</code><span> - Override the container render </span><code>function(notifications) { return &amp;lt;div id=&amp;#x27;notificationContainer&amp;#x27;&amp;gt;{notifications}&amp;lt;/div&amp;gt; }</code></p><ul><li><code>notifications</code><span> are the rendered components, you need to specify renderContainer and renderNotification separately</span></li></ul></li></ul><h4><span>notification</span></h4><p><span>The notification object which is passed to </span><code>renderNotification</code></p><pre><pre class="lowlight"><code class="hljs js">{
-  key: <span class="hljs-string">&quot;&lt;unique key used as react component key&gt;&quot;</span>
+  <span class="hljs-attr">key</span>: <span class="hljs-string">&quot;&lt;unique key used as react component key&gt;&quot;</span>
   message: <span class="hljs-string">&quot;&lt;notificationMessage || defaultMessage&gt;&quot;</span>
   trigger: <span class="hljs-string">&quot;&lt;redux event which triggered the notification&gt;&quot;</span>
 }
@@ -74,13 +79,13 @@ for the scaffolding of this library</span></p></div></div>
     </div>
 
     
-      <script src="manifest.d8d98069a266edff6b8f.js"></script>
+      <script src="manifest.5c7995e0b45bc6a4c062.js"></script>
     
-      <script src="vendors.33d39c0421859266eb28.js"></script>
+      <script src="vendors.dd9bf83731cb36a66a8b.js"></script>
     
-      <script src="style.0bc5f6af7ce7c8246ec4.js"></script>
+      <script src="style.04cf3d261b35930b92ef.js"></script>
     
-      <script src="app.87ab3511760ff9a7ba01.js"></script>
+      <script src="app.a9d4e3119d3023d61b91.js"></script>
     
   </body>
 </html>
