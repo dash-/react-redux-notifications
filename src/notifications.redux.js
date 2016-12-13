@@ -24,11 +24,34 @@ export function hide(trigger, key) {
   }
 }
 
+function getNotificationsState(store) {
+  const state = store.getState()
+  let notificationsState = state.notifications
+
+  if(typeof notificationsState === 'object') {
+    return notificationsState
+  }
+
+  // Check for Immutable.js state
+  if(typeof state.get === 'function') {
+    notificationsState = state.get('notifications')
+
+    if(typeof notificationsState === 'object') {
+      return notificationsState
+    }
+  }
+
+  throw new Error(
+    'Store is invalid: State key "notifications" does not reference an object'
+  )
+}
+
 let keySeed = 0
 
 export const middleware = store => next => action => {
   const result = next(action)
-  const listener = store.getState().notifications.listeningTo[action.type]
+
+  const listener = getNotificationsState(store).listeningTo[action.type]
   if (listener) {
     const notificationKey = `notification_${keySeed++}`
     store.dispatch({
