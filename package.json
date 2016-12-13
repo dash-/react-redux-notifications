@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-notifications",
-  "description": "Redux state driven notification components for React",
-  "user": "JakeGinnivan",
+  "name": "react-redux-notifications-immutable",
+  "description": "Immutable.js-compatible version of Jake Ginnivan's react-redux-notifications: Redux state driven notification components for React",
+  "user": "dash-",
   "author": "Jake Ginnivan",
   "version": "0.2.1",
   "scripts": {

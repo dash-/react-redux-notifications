@@ -1,3 +1,11 @@
+# Warning!!
+Do not use this package! This is a fork of Jake Ginnivan's
+react-redux-notifications package, with a
+[bug fix for Immutable.js](https://github.com/JakeGinnivan/react-redux-notifications/issues/3).
+A pull request has been submitted, and this npm package/version will be removed
+as soon as that pull request is merged and published on npm. This is a temporary
+solution only! It may be removed within hours or days of being published.
+
 # react-redux-notifications
 Say you have a form with an API call and when the form submit succeeds you want to show the user a success message, or
 in the event of a failure, show them a failure message.
