@@ -77,6 +77,27 @@ InlineNotification.propTypes = {
   renderContainer: React.PropTypes.func
 }
 
+function getNotificationsState(state) {
+  let notificationsState = state.notifications
+
+  if(typeof notificationsState === 'object') {
+    return notificationsState
+  }
+
+  // Check for Immutable.js state
+  if(typeof state.get === 'function') {
+    notificationsState = state.get('notifications')
+
+    if(typeof notificationsState === 'object') {
+      return notificationsState
+    }
+  }
+
+  throw new Error(
+    'Store is invalid: State key "notifications" does not reference an object'
+  )
+}
+
 export default connect(state => ({
-  notifications: state.notifications.notifications
+  notifications: getNotificationsState(state).notifications
 }))(InlineNotification)
