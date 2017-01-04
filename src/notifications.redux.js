@@ -111,6 +111,9 @@ export default function(state = { listeningTo: { }, notifications: { } }, action
       })
     case HIDE_NOTIFICATION: {
       let notificationForActionType = state.notifications[action.trigger]
+			if(typeof notificationForActionType === 'undefined') {
+				return state
+			}
       const filtered = notificationForActionType.filter(n => n.key !== action.key)
       return Object.assign({}, state, {
         notifications: Object.assign({}, state.notifications, {
