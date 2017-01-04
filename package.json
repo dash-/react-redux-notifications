@@ -3,7 +3,7 @@
   "description": "Immutable.js-compatible version of Jake Ginnivan's react-redux-notifications (v0.2.1): Redux state driven notification components for React",
   "user": "dash-",
   "author": "Jake Ginnivan",
-  "version": "0.2.2",
+  "version": "0.2.201",
   "scripts": {
     "start": "webpack-dev-server",
     "test": "karma start",
